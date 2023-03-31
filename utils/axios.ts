@@ -11,6 +11,7 @@ interface Result {
 interface ResultData<T = any> extends Result {
     data?: T;
 }
+
 const URL: string = '/api' // 配置前缀
 enum RequestEnums {
     TIMEOUT = 20000,
@@ -24,7 +25,7 @@ const config = {
     // 设置超时时间
     timeout: RequestEnums.TIMEOUT as number,
     // 跨域时候允许携带凭证
-    withCredentials: true
+    withCredentials: true,
 }
 
 class RequestHttp {
@@ -40,18 +41,17 @@ class RequestHttp {
          * token校验(JWT) : 接受服务器返回的token,存储到vuex/pinia/本地储存当中
          */
         this.service.interceptors.request.use(
-            (config: AxiosRequestConfig) => {
-                const token = localStorage.getItem('token') || '';
-                return {
-                    ...config,
-                    headers: {
-                        'x-access-token': token, // 请求头中携带token信息
-                    }
+            (config) => {
+                const { headers } = config;
+                const token = localStorage.getItem('token') ?? '';
+                if (headers && token) {
+                    headers['x-access-token'] = token;
                 }
+                return config;
             },
             (error: AxiosError) => {
                 // 请求报错
-                Promise.reject(error)
+                return Promise.reject(error)
             }
         )
 

@@ -1,1 +1,1 @@
-import axios from "@/plugins/axios";
+import axios from "~/utils/axios";

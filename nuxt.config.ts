@@ -1,4 +1,7 @@
 const path = require('path')
+import { defineNuxtConfig } from 'nuxt/config';
+import eslint from 'vite-plugin-eslint';
+
 export default defineNuxtConfig({
     nitro: {
         devProxy: {
@@ -18,10 +21,12 @@ export default defineNuxtConfig({
     modules: [
         '@vueuse/nuxt',
         '@element-plus/nuxt',
-
     ],
-    elementPlus: {
-        css: true
-    }
+    typescript: {
+        typeCheck: true
+    },
+    vite: {
+        plugins: [eslint()],
+    },
 })
 
