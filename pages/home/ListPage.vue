@@ -6,10 +6,6 @@
   </el-row>
 </template>
 
-<script setup lang="ts">
-import 'element-plus/dist/index.css'
-import { ElRow, ElCol } from 'element-plus'
-
-</script>
+<script setup lang="ts"></script>
 
 <style></style>

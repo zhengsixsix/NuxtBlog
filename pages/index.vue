@@ -1,6 +1,4 @@
-
 <template>
-<<<<<<< HEAD
   <div class="home">
     <el-row>
       <el-aside>
@@ -20,20 +18,15 @@
   </div>
 </template>
 <script setup lang="ts">
-import 'element-plus/dist/index.css'
-import { ElRow, ElCol, ElAside, ElMain } from 'element-plus'
 import LabelRouter from './home/LabelRouter.vue'
 import ListPage from './home/ListPage.vue'
 import PersonalProfile from './home/PersonalProfile.vue'
 import StyleManagement from './home/StyleManagement.vue'
-definePageMeta({
-  layout: 'default'
-})
 </script>
 
 <style lang="scss" scoped>
-.home{
-    max-width: 1600px;
-    margin: 0 auto;
+.home {
+  max-width: 1600px;
+  margin: 0 auto;
 }
 </style>
