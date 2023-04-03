@@ -1,5 +1,6 @@
 
 <template>
+<<<<<<< HEAD
   <div class="home">
     <el-row>
       <el-aside>
@@ -25,6 +26,9 @@ import LabelRouter from './home/LabelRouter.vue'
 import ListPage from './home/ListPage.vue'
 import PersonalProfile from './home/PersonalProfile.vue'
 import StyleManagement from './home/StyleManagement.vue'
+definePageMeta({
+  layout: 'default'
+})
 </script>
 
 <style lang="scss" scoped>
