@@ -1,5 +1,11 @@
 <template>
   <div>
-    123
+    idx
   </div>
 </template>
+
+<script>
+export default {
+  layout: 'default'
+}
+</script>
