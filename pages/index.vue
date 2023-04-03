@@ -1,5 +1,5 @@
 <template>
   <div>
-    <router-view />
+    123
   </div>
 </template>
