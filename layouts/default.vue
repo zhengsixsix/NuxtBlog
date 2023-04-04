@@ -7,14 +7,14 @@
       <el-main>
         <slot />
       </el-main>
-      <el-footer><Footer /></el-footer>
+      <el-footer>
+        <Footer />
+      </el-footer>
     </el-container>
   </div>
 </template>
 
 <script lang="ts" setup>
-import Footer from './components/footer.vue';
-import Header from './components/header.vue';
 </script>
 
 <style lang="scss" scoped>

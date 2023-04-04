@@ -1,9 +1,7 @@
-g<template>
+<template>
   <div class="header">
     header
   </div>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
