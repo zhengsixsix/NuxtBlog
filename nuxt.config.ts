@@ -1,5 +1,5 @@
 import path from 'path';
-
+import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   nitro: {
     devProxy: {
@@ -17,7 +17,6 @@ export default defineNuxtConfig({
     '@': path.resolve(__dirname)
   },
   modules: [
-    '@vueuse/nuxt',
     '@element-plus/nuxt'
   ]
-});
+})

@@ -1,0 +1,9 @@
+{
+    //prettier可以格式化很多种格式，所以需要在这里对应配置下
+  "prettier.tabWidth": 2, // 缩进字节数
+  "prettier.useTabs": false, // 句尾添加分号
+  "prettier.singleQuote": true, // 使用单引号代替双引号
+  "prettier.semi": false, //分号
+  "prettier.bracketSpacing": true, // 在对象，数组括号与文字之间加空格
+  "trailingComma": "none",
+}
