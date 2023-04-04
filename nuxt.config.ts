@@ -1,5 +1,4 @@
 import path from 'path';
-import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   nitro: {
