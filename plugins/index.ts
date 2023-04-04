@@ -1,7 +1,4 @@
-import { ComponentPublicInstance } from '@vue/runtime-core/dist/runtime-core';
-import { NuxtApp, defineNuxtPlugin } from 'nuxt/app';
-
-export default defineNuxtPlugin((nuxtApp: NuxtApp) => {
+export default defineNuxtPlugin((nuxtApp: any) => {
   // err: 错误信息
   // context: vue 实例
   nuxtApp.vueApp.config.errorHandler = (err: unknown, context: ComponentPublicInstance<any>) => {

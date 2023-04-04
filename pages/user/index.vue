@@ -69,7 +69,6 @@
 </template>
 
 <script setup>
-import { useRouter } from 'nuxt/app';
 import { ref } from 'vue';
 definePageMeta({
   layout: false
