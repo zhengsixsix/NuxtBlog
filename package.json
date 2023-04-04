@@ -10,22 +10,14 @@
 	},
 	"devDependencies": {
 		"@nuxt/types": "^2.16.3",
-		"@nuxtjs/eslint-config-typescript": "^12.0.0",
-		"@typescript-eslint/parser": "^5.57.0",
-		"eslint": "^8.37.0",
-		"eslint-plugin-nuxt": "^4.0.0",
-		"eslint-plugin-prettier": "^4.2.1",
 		"nuxt": "^3.3.3",
 		"sass": "^1.60.0",
 		"sass-loader": "^13.2.2",
 		"typescript": "^5.0.3",
-		"vite-plugin-eslint": "^1.8.1",
 		"vue": "^3.2.47"
 	},
 	"dependencies": {
 		"@element-plus/nuxt": "^1.0.4",
-		"@vueuse/core": "^9.13.0",
-		"@vueuse/nuxt": "^9.13.0",
 		"axios": "^1.3.4",
 		"element-plus": "^2.3.2",
 		"parallax-js": "^3.1.0"
