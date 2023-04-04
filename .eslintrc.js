@@ -4,6 +4,7 @@ module.exports = {
   rules: {
     indent: [2, 2],
     'no-console': 'off',
+    semi: ['error', 'always'],
     'vue/multi-word-component-names': 'off',
     'linebreak-style': ['off', 'windows'],
     'import/order': [
@@ -39,4 +40,4 @@ module.exports = {
       }
     ]
   }
-}
+};

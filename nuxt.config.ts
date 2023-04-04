@@ -1,6 +1,5 @@
-import path from 'path'
-import { defineNuxtConfig } from 'nuxt/config'
-import eslint from 'vite-plugin-eslint'
+import path from 'path';
+import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   nitro: {
@@ -14,15 +13,12 @@ export default defineNuxtConfig({
       }
     }
   },
-  css: ['@/assets/style/reset.css', '@/assets/style/default.scss'],
+  css: ['@/assets/style/reset.css', '@/assets/style/default.scss', 'element-plus/dist/index.css', '@/assets/style/user.scss'],
   alias: {
     '@': path.resolve(__dirname)
   },
   modules: [
     '@vueuse/nuxt',
     '@element-plus/nuxt'
-  ],
-  vite: {
-    plugins: [eslint()]
-  }
-})
+  ]
+});
