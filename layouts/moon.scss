@@ -16,7 +16,6 @@
         padding: 0;
         width: 100vw;
         height: 100vh;
-        overflow: hidden;
         display: flex;
         align-items: flex-end;
         justify-content: center;
@@ -93,7 +92,7 @@
         content: "";
         position: absolute;
         width: 100vw;
-        height: 200%;
+        height: 100%;
         --s1: radial-gradient(0.1vmin 0.1vmin at 50% 50%, #ffffff, #fff0);
         --s2: radial-gradient(0.2vmin 0.2vmin at 50% 50%, #ffffff, #fff0);
         background-image: var(--s1), var(--s1), var(--s1), var(--s2), var(--s2),

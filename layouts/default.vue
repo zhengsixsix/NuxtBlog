@@ -17,14 +17,14 @@
     </el-container>
   </div>
 </template>
+
 <script lang="ts" setup>
 import Footer from './components/footer.vue';
 import Header from './components/header.vue';
 </script>
 
-<style src="./moon.css" />
-
 <style lang="scss" scoped>
+@import './moon.scss';
 .common-layout {
   width: 100%;
   height: 100%;

@@ -71,7 +71,7 @@
 
 <script setup>
 definePageMeta({
-  layout: false
+  layout: 'user'
 });
 
 const drawer = ref(false);
