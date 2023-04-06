@@ -1,6 +1,6 @@
 <template>
   <div class="user">
-    <header class="header">
+    <header class="header" :style="{ backgroundImage: `url(${headerUrl})` }">
       <div class="title">
         <h1 class="name">
           jiech的个人博客
@@ -97,19 +97,18 @@ const articleList = ref([
     updateTime: '2022-12-30'
   }
 ]);
+const headerUrl = ref('http://blog-1304453302.cos.ap-guangzhou.myqcloud.com/1680750216132.jpg');
 const router = useRouter();
 const handleGoToHome = () => router.push('/');
 
 </script>
 <style lang="scss" scoped>
-
 .user {
   background: #f4f8fb;
 
   .header {
     width: 100vw;
     height: 100vh;
-    background: url(http://blog-1304453302.cos.ap-guangzhou.myqcloud.com/1680576120046.jpg);
     background-size: 100%;
     position: relative;
 

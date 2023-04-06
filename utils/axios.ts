@@ -45,7 +45,7 @@ class RequestHttp {
         const { headers } = config;
         const token = localStorage.getItem('token') ?? '';
         if (headers && token) {
-          headers['token'] = token;
+          headers.token = token;
         }
         return config;
       },
