@@ -1,35 +1,42 @@
+<!--
+ * @Author: 1314520zjX! 1833496831@qq.com
+ * @Date: 2023-04-06 17:15:39
+ * @LastEditors: 1314520zjX! 1833496831@qq.com
+ * @LastEditTime: 2023-04-06 18:49:11
+ * @FilePath: \blog\pages\home\PersonalProfile.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
-  <el-row>
-    <el-col :span="24">
-      <div class="part">
-        <nuxt-link to="/user">
-          <div class="user-info">
-            <div class="avater-wrapper">
-              <div class="avater">
-                <img
-                  src="https://q1.qlogo.cn/g?b=qq&nk=2510186180&s=100"
-                  alt=""
-                >
+  <div class="PersonalProfile">
+    <div class="part">
+      <nuxt-link to="/user">
+        <div class="user-info">
+          <div class="avater-wrapper">
+            <div class="avater">
+              <img
+                src="https://q1.qlogo.cn/g?b=qq&nk=2510186180&s=100"
+                alt=""
+              >
+            </div>
+            <div class="info">
+              <div class="nickname">
+                20savage
               </div>
-              <div class="info">
-                <div class="nickname">
-                  20savage
-                </div>
-                <div class="description">
-                  强的不是我,是我的20岁
-                </div>
+              <div class="description">
+                强的不是我,是我的20岁
               </div>
             </div>
           </div>
-        </nuxt-link>
-      </div>
-    </el-col>
-  </el-row>
+        </div>
+      </nuxt-link>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
+@import '@/assets/style/home.scss';
 @keyframes example {
   from {
     transform: rotate(0deg);
@@ -38,63 +45,51 @@
     transform: rotate(360deg);
   }
 }
-.part {
-  position: relative;
-  width: 100%;
-  height: auto;
-  border-radius: 7px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(209, 213, 219, 0.3);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-  margin-top: 10px;
-  .user-info {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    padding: 10px 10px 0;
-    .avater-wrapper {
+.PersonalProfile {
+  .part {
+    .user-info {
       display: flex;
+      position: relative;
       flex-direction: column;
-      .avater {
+      padding: 10px 10px 0;
+      .avater-wrapper {
         display: flex;
-        width: 120px;
-        position: relative;
-        height: 120px;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        border-radius: 20px;
-        &::before {
-          content: '';
-          position: absolute;
-          width: 75px;
-          height: 135%;
-          background: linear-gradient(135deg, #f54ea2, #ff7676);
-          animation: example 4s linear infinite;
+        flex-direction: column;
+        .avater {
+          display: flex;
+          width: 120px;
+          position: relative;
+          height: 120px;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          border-radius: 20px;
+          &::before {
+            content: '';
+            position: absolute;
+            width: 75px;
+            height: 135%;
+            background: linear-gradient(135deg, #f54ea2, #ff7676);
+            animation: example 4s linear infinite;
+          }
+          img {
+            border-radius: 12px;
+            z-index: 999;
+            width: 95%;
+          }
         }
-        img {
-          border-radius: 12px;
-          z-index: 999;
-          width: 95%;
-        }
-      }
-      .info {
-        .nickname {
-          font-size: 16px;
-          font-weight: 700;
-          background: linear-gradient(135deg, #5b247a, #1bcedf);
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-        .description {
-          font-size: 14px;
-          color: #999;
+        .info {
+          .nickname {
+            font-size: 16px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #5b247a, #1bcedf);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          .description {
+            font-size: 14px;
+            color: #999;
+          }
         }
       }
     }

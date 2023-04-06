@@ -1,49 +1,35 @@
 <template>
-  <el-row>
-    <el-col :span="24">
-      <div class="part model">
-        <div class="mode_setting-box">
-          <el-switch
-            class="mb-2"
-            active-text="圆角模式"
-            inactive-text="方角模式"
-          />
-        </div>
-        <div class="mode_setting-box">
-          <el-switch
-            class="mb-2"
-            active-text="白天模式"
-            inactive-text="夜晚模式"
-          />
-        </div>
+  <div class="StyleManagement">
+    <div class="part model">
+      <div class="mode_setting-box">
+        <el-switch
+          class="mb-2"
+          active-text="圆角模式"
+          inactive-text="方角模式"
+        />
       </div>
-    </el-col>
-  </el-row>
+      <div class="mode_setting-box">
+        <el-switch
+          class="mb-2"
+          active-text="白天模式"
+          inactive-text="夜晚模式"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-.part {
-  position: relative;
-  width: 100%;
-  height: 87px;
-  border-radius: 7px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(209, 213, 219, 0.3);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  padding: 10px 5px;
-  margin-top: 10px;
-}
-.model {
-  .mode_setting-box {
-    span {
-      color: #fff;
+@import '@/assets/style/home.scss';
+.StyleManagement {
+  .model {
+    height: 87px;
+    .mode_setting-box {
+      span {
+        color: #fff;
+      }
     }
   }
 }
