@@ -88,7 +88,11 @@ const changeStyle = (item: any, index: any) => {
   width: 100%;
   height: auto;
   border-radius: 7px;
-  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(209, 213, 219, 0.3);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

@@ -52,7 +52,7 @@ interface PerformanceInfo {
 
 interface PerformanceMemory extends Performance {
   memory?: {
-    usedJSHeapSize: number;
+    usedJSHeapSize: number
   }
 }
 
@@ -69,22 +69,17 @@ const performanceInfo = reactive(defaultPerformanceInfo)
 const getPerformanceInfront = (): void => {
   if (process.client) {
     setTimeout(() => {
-      const performance: PerformanceMemory = window.performance;
+      const performance: PerformanceMemory = window.performance
       performanceInfo.navigationStart =
-        performance.timing.domLoading -
-        performance.timing.fetchStart
+        performance.timing.domLoading - performance.timing.fetchStart
       performanceInfo.domEnd =
-        performance.timing.domComplete -
-        performance.timing.domLoading
+        performance.timing.domComplete - performance.timing.domLoading
       performanceInfo.domready =
         performance.timing.domContentLoadedEventEnd -
         performance.timing.fetchStart
       performanceInfo.onload =
-        performance.timing.loadEventStart -
-      performance.timing.fetchStart
-        performanceInfo.memory = getrmb(
-          performance?.memory?.usedJSHeapSize
-        )
+        performance.timing.loadEventStart - performance.timing.fetchStart
+      performanceInfo.memory = getrmb(performance?.memory?.usedJSHeapSize)
     }, 500)
   }
 }
@@ -104,7 +99,11 @@ const getrmb = (size: number | undefined): number => {
     width: 100%;
     height: auto;
     border-radius: 7px;
-    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(209, 213, 219, 0.3);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -119,7 +118,8 @@ const getrmb = (size: number | undefined): number => {
     }
     .webPerformance_diary {
       margin-top: 10px;
-      background-color: rgba(0, 0, 0, 0.025);
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
       padding: 15px;
       ul {
         width: 100%;
