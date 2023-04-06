@@ -1,9 +1,13 @@
 <template>
   <div class="part">
-    <div class="main_title">文章热榜·综合</div>
+    <div class="main_title">
+      文章热榜·综合
+    </div>
     <div class="article_list">
       <el-row>
-        <el-col :span="2" class="article_ranking"> 1 </el-col>
+        <el-col :span="2" class="article_ranking">
+          1
+        </el-col>
         <el-col :span="17">
           <div class="article_title" title="当高启强遇到陈书婷”与TCP协议">
             当高启强遇到陈书婷”与TCP协议
@@ -13,12 +17,18 @@
               <img
                 src="https://p26-passport.byteacctimg.com/img/user-avatar/ccf5b399305a43fb8c51d0ba1ee9cf31~300x300.image"
                 alt=""
-              />
+              >
               <span>法官</span>
             </a>
-            <div class="author_text" title="8267 浏览">8267 浏览</div>
-            <div class="author_text" title="42 互动">42 互动</div>
-            <div class="author_text" title="18 收藏">18 收藏</div>
+            <div class="author_text" title="8267 浏览">
+              8267 浏览
+            </div>
+            <div class="author_text" title="42 互动">
+              42 互动
+            </div>
+            <div class="author_text" title="18 收藏">
+              18 收藏
+            </div>
           </div>
         </el-col>
         <el-col :span="5" />

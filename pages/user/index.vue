@@ -105,11 +105,13 @@ const handleGoToHome = () => router.push('/');
 <style lang="scss" scoped>
 .user {
   background: #f4f8fb;
+  overflow-y: scroll;
+  height: 100%;
 
   .header {
     width: 100vw;
     height: 100vh;
-    background-size: 100%;
+    background-size: cover;
     position: relative;
 
     .title {

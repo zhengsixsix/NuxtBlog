@@ -13,8 +13,13 @@
     </el-row>
     <client-only>
       <el-dialog
-        v-model:model-value="visible"
-      />
+        v-model="visible"
+        :title="isLogin ? '登录' : '注册'"
+        width="30%"
+        center
+      >
+        123
+      </el-dialog>
     </client-only>
   </div>
 </template>
@@ -31,7 +36,7 @@ const handleLoginClick = (login: boolean) => {
 <style lang="scss" scoped>
 .header {
   height: 100%;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;

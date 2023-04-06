@@ -37,7 +37,7 @@ import WebsPerformance from './home/WebsPerformance.vue';
 
 <style lang="scss" scoped>
 .home {
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 </style>

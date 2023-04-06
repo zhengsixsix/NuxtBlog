@@ -1,15 +1,14 @@
-<style src="./moon.css" />
 <template>
   <div class="common-layout">
+    <input id="day-night" type="checkbox"><label for="day-night" />
+    <div class="content">
+      <div class="moon-sun" />
+    </div>
     <el-container>
       <el-header height="70px">
         <Header />
       </el-header>
       <el-main>
-        <input type="checkbox" id="day-night" /><label for="day-night"></label>
-        <div class="content">
-          <div class="moon-sun"></div>
-        </div>
         <slot />
       </el-main>
       <el-footer>
@@ -18,14 +17,16 @@
     </el-container>
   </div>
 </template>
-
 <script lang="ts" setup>
 import Footer from './components/footer.vue';
 import Header from './components/header.vue';
 </script>
 
+<style src="./moon.css" />
+
 <style lang="scss" scoped>
 .common-layout {
+  width: 100%;
   height: 100%;
 
   .el-container {
@@ -37,7 +38,7 @@ import Header from './components/header.vue';
   }
 
   .el-main {
-    width: 1600px;
+    width: 1200px;
     margin: 0 auto;
   }
 }

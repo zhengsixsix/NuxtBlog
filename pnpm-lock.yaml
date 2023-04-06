@@ -8,15 +8,11 @@ devDependencies:
   '@element-plus/icons-vue': 2.1.0
   '@nuxtjs/eslint-config-typescript': 12.0.0_eslint@8.37.0+typescript@5.0.3
   '@types/node': 18.15.11
-  '@typescript-eslint/parser': 5.57.1_eslint@8.37.0+typescript@5.0.3
   eslint: 8.37.0
-  eslint-plugin-nuxt: 4.0.0_eslint@8.37.0
-  eslint-plugin-prettier: 4.2.1_eslint@8.37.0
   nuxt: 3.3.3_9f77c6284b3bd65223b0db045d748ab1
   sass: 1.60.0
   sass-loader: 13.2.2_sass@1.60.0
   typescript: 5.0.3
-  vite-plugin-eslint: 1.8.1_eslint@8.37.0
 lockfileVersion: 5.2
 packages:
   /@ampproject/remapping/2.2.0:
@@ -1113,13 +1109,6 @@ packages:
       node: '>=10.13.0'
     resolution:
       integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
-  /@types/eslint/8.37.0:
-    dependencies:
-      '@types/estree': 1.0.0
-      '@types/json-schema': 7.0.11
-    dev: true
-    resolution:
-      integrity: sha512-Piet7dG2JBuDIfohBngQ3rCt7MgO9xCO4xIMKxBThCq5PNRB91IjlJ10eJVwfoNtvTErmxLzwBZ7rHZtbOMmFQ==
   /@types/estree/1.0.0:
     resolution:
       integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==
@@ -2796,32 +2785,6 @@ packages:
       eslint: '>=5.16.0'
     resolution:
       integrity: sha512-oUwtPJ1W0SKD0Tr+wqu92c5xuCeQqB3hSCHasn/ZgjFdA9iDGNkNf2Zi9ztY7X+hNuMib23LNGRm6+uN+KLE3g==
-  /eslint-plugin-nuxt/4.0.0_eslint@8.37.0:
-    dependencies:
-      eslint-plugin-vue: 9.10.0_eslint@8.37.0
-      semver: 7.3.8
-      vue-eslint-parser: 9.1.1_eslint@8.37.0
-    dev: true
-    peerDependencies:
-      eslint: '*'
-    resolution:
-      integrity: sha512-v3Vwdk8YKe52bAz8eSIDqQuTtfL/T1r9dSl1uhC5SyR5pgLxgKkQdxXVf/Bf6Ax7uyd9rHqiAuYVdqqDb7ILdA==
-  /eslint-plugin-prettier/4.2.1_eslint@8.37.0:
-    dependencies:
-      eslint: 8.37.0
-      prettier-linter-helpers: 1.0.0
-    dev: true
-    engines:
-      node: '>=12.0.0'
-    peerDependencies:
-      eslint: '>=7.28.0'
-      eslint-config-prettier: '*'
-      prettier: '>=2.0.0'
-    peerDependenciesMeta:
-      eslint-config-prettier:
-        optional: true
-    resolution:
-      integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==
   /eslint-plugin-promise/6.1.1_eslint@8.37.0:
     dependencies:
       eslint: 8.37.0
@@ -3077,10 +3040,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
-  /fast-diff/1.2.0:
-    dev: true
-    resolution:
-      integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==
   /fast-glob/3.2.12:
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -5264,14 +5223,6 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
-  /prettier-linter-helpers/1.0.0:
-    dependencies:
-      fast-diff: 1.2.0
-    dev: true
-    engines:
-      node: '>=6.0.0'
-    resolution:
-      integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
   /pretty-bytes/6.1.0:
     dev: true
     engines:
@@ -5508,15 +5459,6 @@ packages:
         optional: true
     resolution:
       integrity: sha512-bbDOv47+Bw4C/cgs0czZqfm8L82xOZssk4ayZjG40y9zbXclNk7YikrZTDao6p7+HDiGxrN0b65SgZiVm9k1Cg==
-  /rollup/2.79.1:
-    dev: true
-    engines:
-      node: '>=10.0.0'
-    hasBin: true
-    optionalDependencies:
-      fsevents: 2.3.2
-    resolution:
-      integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==
   /rollup/3.20.2:
     dev: true
     engines:
@@ -6372,18 +6314,6 @@ packages:
         optional: true
     resolution:
       integrity: sha512-ftRyON0gORUHDxcDt2BErmsikKSkfvl1i2DoP6Jt2zDO9InfvM6tqO1RkXhSjkaXEhKPea6YOnhFaZxW3BzudQ==
-  /vite-plugin-eslint/1.8.1_eslint@8.37.0:
-    dependencies:
-      '@rollup/pluginutils': 4.2.1
-      '@types/eslint': 8.37.0
-      eslint: 8.37.0
-      rollup: 2.79.1
-    dev: true
-    peerDependencies:
-      eslint: '>=7'
-      vite: '>=2'
-    resolution:
-      integrity: sha512-PqdMf3Y2fLO9FsNPmMX+//2BF5SF8nEWspZdgl4kSt7UvHDRHVVfHvxsD7ULYzZrJDGRxR81Nq7TOFgwMnUang==
   /vite/4.2.1_@types+node@18.15.11+sass@1.60.0:
     dependencies:
       '@types/node': 18.15.11
@@ -6690,16 +6620,12 @@ specifiers:
   '@element-plus/nuxt': ^1.0.4
   '@nuxtjs/eslint-config-typescript': ^12.0.0
   '@types/node': ^18.15.11
-  '@typescript-eslint/parser': ^5.57.1
   '@vueuse/core': ^9.13.0
   '@vueuse/nuxt': ^9.13.0
   axios: ^1.3.5
   element-plus: ^2.3.2
   eslint: ^8.37.0
-  eslint-plugin-nuxt: ^4.0.0
-  eslint-plugin-prettier: ^4.2.1
   nuxt: ^3.3.3
   sass: ^1.60.0
   sass-loader: ^13.2.2
   typescript: ^5.0.3
-  vite-plugin-eslint: ^1.8.1

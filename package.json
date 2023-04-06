@@ -12,15 +12,11 @@
     "@element-plus/icons-vue": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@types/node": "^18.15.11",
-    "@typescript-eslint/parser": "^5.57.1",
     "eslint": "^8.37.0",
-    "eslint-plugin-nuxt": "^4.0.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "nuxt": "^3.3.3",
     "sass": "^1.60.0",
     "sass-loader": "^13.2.2",
-    "typescript": "^5.0.3",
-    "vite-plugin-eslint": "^1.8.1"
+    "typescript": "^5.0.3"
   },
   "dependencies": {
     "@element-plus/nuxt": "^1.0.4",

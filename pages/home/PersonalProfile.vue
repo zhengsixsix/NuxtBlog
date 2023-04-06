@@ -1,11 +1,3 @@
-<!--
- * @Author: 1314520zjX! 1833496831@qq.com
- * @Date: 2023-04-04 16:32:09
- * @LastEditors: 1314520zjX! 1833496831@qq.com
- * @LastEditTime: 2023-04-06 11:23:17
- * @FilePath: \blog\pages\home\PersonalProfile.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
 <template>
   <el-row>
     <el-col :span="24">
@@ -17,11 +9,15 @@
                 <img
                   src="https://q1.qlogo.cn/g?b=qq&nk=2510186180&s=100"
                   alt=""
-                />
+                >
               </div>
               <div class="info">
-                <div class="nickname">20savage</div>
-                <div class="description">强的不是我,是我的20岁</div>
+                <div class="nickname">
+                  20savage
+                </div>
+                <div class="description">
+                  强的不是我,是我的20岁
+                </div>
               </div>
             </div>
           </div>

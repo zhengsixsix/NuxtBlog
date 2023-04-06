@@ -1,12 +1,18 @@
 <template>
   <div class="part">
-    <div class="main_title">一言</div>
+    <div class="main_title">
+      一言
+    </div>
     <div class="everyDay_body">
-      <div class="everyDay_content_title"># 次元战争·红龙 #</div>
+      <div class="everyDay_content_title">
+        # 次元战争·红龙 #
+      </div>
       <div class="everyDay_content_content">
         如果有一个喜欢你的人出现，一定不要凶她哦!
       </div>
-      <div class="everyDay_content_form">来自 瑶瑶</div>
+      <div class="everyDay_content_form">
+        来自 瑶瑶
+      </div>
     </div>
   </div>
 </template>
