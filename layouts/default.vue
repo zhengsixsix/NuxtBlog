@@ -1,14 +1,25 @@
+<!--
+ * @Author: 1314520zjX! 1833496831@qq.com
+ * @Date: 2023-04-06 17:15:39
+ * @LastEditors: 1314520zjX! 1833496831@qq.com
+ * @LastEditTime: 2023-04-06 17:23:58
+ * @FilePath: \blog\layouts\default.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
   <div class="common-layout">
-    <input id="day-night" type="checkbox"><label for="day-night" />
-    <div class="content">
-      <div class="moon-sun" />
-    </div>
     <el-container>
       <el-header height="70px">
         <Header />
       </el-header>
       <el-main>
+        <input type="checkbox" id="day-night" /><label for="day-night"></label>
+        <div class="moon">
+          <div class="content">
+            <div class="moon-sun"></div>
+          </div>
+        </div>
+
         <slot />
       </el-main>
       <el-footer>
@@ -19,12 +30,12 @@
 </template>
 
 <script lang="ts" setup>
-import Footer from './components/footer.vue';
-import Header from './components/header.vue';
+import Footer from './components/footer.vue'
+import Header from './components/header.vue'
 </script>
 
+<style src="./moon.scss" />
 <style lang="scss" scoped>
-@import './moon.scss';
 .common-layout {
   width: 100%;
   height: 100%;
