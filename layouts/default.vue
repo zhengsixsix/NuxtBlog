@@ -1,7 +1,7 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header>
+      <el-header height="70px">
         <Header />
       </el-header>
       <el-main>
@@ -15,6 +15,9 @@
 </template>
 
 <script lang="ts" setup>
+import Header from './components/header.vue';
+import Footer from './components/footer.vue';
+
 </script>
 
 <style lang="scss" scoped>
@@ -26,11 +29,10 @@
   }
 
   .el-header {
-    background: pink;
+    background: #fff;
   }
 
   .el-footer {
-    background: blue;
   }
 }
 </style>

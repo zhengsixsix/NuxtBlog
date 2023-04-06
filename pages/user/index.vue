@@ -29,6 +29,7 @@
           <el-avatar :size="75" src="https://empty" class="user-info-avatar" @error="errorHandler">
             <img
               src="http://blog-1304453302.cos.ap-guangzhou.myqcloud.com/1669971749823.jpeg"
+              alt="头像"
             >
           </el-avatar>
           <div class="user-info-desctiption">
@@ -101,70 +102,71 @@ const handleGoToHome = () => router.push('/');
 
 </script>
 <style lang="scss" scoped>
-.header {
-  width: 100vw;
-  height: 100vh;
-  background: url(http://blog-1304453302.cos.ap-guangzhou.myqcloud.com/1680576120046.jpg);
-  background-size: 100%;
-  position: relative;
-
-  .title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-  }
-
-  .name {
-    font-size: 50px;
-    cursor: pointer;
-  }
-
-  .discription {
-    font-size: 20px;
-    font-weight: 400;
-    margin-top: 10px;
-    color: rgba(255, 255, 255, .8);
-    text-align: center;
-  }
-}
-
-.meta-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 6px 15px;
-}
-
-.user-info {
-  margin-bottom: 20px;
-
-  &-avatar {
-    display: block;
-    margin: 0 auto 20px;
-  }
-
-  &-desctiption {
-    color: #fff;
-    text-align: center;
-    margin-bottom: 5px;
-  }
-}
-
-.list {
-  color: rgba(255, 255, 255, .8);
-
-  &-item {
-    cursor: pointer;
-  }
-}
 
 .user {
   background: #f4f8fb;
+
+  .header {
+    width: 100vw;
+    height: 100vh;
+    background: url(http://blog-1304453302.cos.ap-guangzhou.myqcloud.com/1680576120046.jpg);
+    background-size: 100%;
+    position: relative;
+
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+    }
+
+    .name {
+      font-size: 50px;
+      cursor: pointer;
+    }
+
+    .discription {
+      font-size: 20px;
+      font-weight: 400;
+      margin-top: 10px;
+      color: rgba(255, 255, 255, .8);
+      text-align: center;
+    }
+  }
+
+  .meta-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 6px 15px;
+  }
+
+  .list {
+    color: rgba(255, 255, 255, .8);
+
+    &-item {
+      cursor: pointer;
+    }
+  }
+
+  &-info {
+    margin-bottom: 20px;
+
+    &-avatar {
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    &-desctiption {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  }
 
   .article {
     margin: 30px auto;

@@ -14,10 +14,10 @@ interface ResultData<T = any> extends Result {
 
 const URL = '/api'; // 配置前缀
 enum RequestEnums {
-    TIMEOUT = 20000,
-    OVERDUE = 600, // 登录失效
-    FAIL = 999, // 请求失败
-    SUCCESS = 200, // 请求成功
+  TIMEOUT = 20000,
+  OVERDUE = 600, // 登录失效
+  FAIL = 999, // 请求失败
+  SUCCESS = 200, // 请求成功
 }
 const config = {
   // 默认地址
@@ -45,7 +45,7 @@ class RequestHttp {
         const { headers } = config;
         const token = localStorage.getItem('token') ?? '';
         if (headers && token) {
-          headers['x-access-token'] = token;
+          headers['token'] = token;
         }
         return config;
       },

@@ -50,6 +50,12 @@ interface PerformanceInfo {
   memory: number
 }
 
+interface PerformanceMemory extends Performance {
+  memory?: {
+    usedJSHeapSize: number;
+  }
+}
+
 const defaultPerformanceInfo: PerformanceInfo = {
   navigationStart: 0,
   domEnd: 0,
@@ -63,23 +69,22 @@ const performanceInfo = reactive(defaultPerformanceInfo)
 const getPerformanceInfront = (): void => {
   if (process.client) {
     setTimeout(() => {
+      const performance: PerformanceMemory = window.performance;
       performanceInfo.navigationStart =
-        window.performance.timing.domLoading -
-        window.performance.timing.fetchStart
+        performance.timing.domLoading -
+        performance.timing.fetchStart
       performanceInfo.domEnd =
-        window.performance.timing.domComplete -
-        window.performance.timing.domLoading
+        performance.timing.domComplete -
+        performance.timing.domLoading
       performanceInfo.domready =
-        window.performance.timing.domContentLoadedEventEnd -
-        window.performance.timing.fetchStart
+        performance.timing.domContentLoadedEventEnd -
+        performance.timing.fetchStart
       performanceInfo.onload =
-        window.performance.timing.loadEventStart -
-        window.performance.timing.fetchStart
-      if (window.performance.hasOwnProperty('memory')) {
+        performance.timing.loadEventStart -
+      performance.timing.fetchStart
         performanceInfo.memory = getrmb(
-          window.performance.memory.usedJSHeapSize
+          performance?.memory?.usedJSHeapSize
         )
-      }
     }, 500)
   }
 }
