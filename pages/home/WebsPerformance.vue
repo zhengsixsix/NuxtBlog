@@ -1,7 +1,9 @@
 <template>
   <div class="box01">
     <div class="part info">
-      <div class="main_title">网站信息</div>
+      <div class="main_title">
+        网站信息
+      </div>
       <div class="webPerformance_diary">
         <ul>
           <li class="webPerformance_diary_item">
@@ -41,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive } from 'vue';
 interface PerformanceInfo {
   navigationStart: number
   domEnd: number
@@ -61,35 +63,41 @@ const defaultPerformanceInfo: PerformanceInfo = {
   domEnd: 0,
   domready: 0,
   onload: 0,
-  memory: 0,
-}
+  memory: 0
+};
 
-const performanceInfo = reactive(defaultPerformanceInfo)
+const performanceInfo = reactive(defaultPerformanceInfo);
 // 获取网站性能信息 要编程宏任务拿到最后的数据
 const getPerformanceInfront = (): void => {
+  // @ts-ignore
   if (process.client) {
     setTimeout(() => {
-      const performance: PerformanceMemory = window.performance
+      const performance: PerformanceMemory = window.performance;
       performanceInfo.navigationStart =
-        performance.timing.domLoading - performance.timing.fetchStart
+        performance.timing.domLoading -
+        performance.timing.fetchStart;
       performanceInfo.domEnd =
-        performance.timing.domComplete - performance.timing.domLoading
+        performance.timing.domComplete -
+        performance.timing.domLoading;
       performanceInfo.domready =
         performance.timing.domContentLoadedEventEnd -
-        performance.timing.fetchStart
+        performance.timing.fetchStart;
       performanceInfo.onload =
-        performance.timing.loadEventStart - performance.timing.fetchStart
-      performanceInfo.memory = getrmb(performance?.memory?.usedJSHeapSize)
-    }, 500)
+        performance.timing.loadEventStart -
+      performance.timing.fetchStart;
+      performanceInfo.memory = getrmb(
+        performance?.memory?.usedJSHeapSize
+      );
+    }, 500);
   }
-}
-getPerformanceInfront()
+};
+getPerformanceInfront();
 const getrmb = (size: number | undefined): number => {
   if (size === undefined) {
-    return 0
+    return 0;
   }
-  return Math.floor(size / 1024 / 1024)
-}
+  return Math.floor(size / 1024 / 1024 / 100);
+};
 </script>
 
 <style lang="scss" scoped>

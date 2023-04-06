@@ -3,7 +3,7 @@
     <div class="main_title">文章热榜·综合</div>
     <div class="article_list">
       <el-row>
-        <el-col :span="2" class="article_ranking">1</el-col>
+        <el-col :span="2" class="article_ranking"> 1 </el-col>
         <el-col :span="17">
           <div class="article_title" title="当高启强遇到陈书婷”与TCP协议">
             当高启强遇到陈书婷”与TCP协议

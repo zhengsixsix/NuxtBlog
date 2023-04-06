@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
+
 const navList = reactive([
   {
     id: 0,
@@ -76,10 +76,10 @@ const navList = reactive([
     title: '后台',
     activeShow: false
   }
-])
+]);
 const changeStyle = (item: any, index: any) => {
-  console.log(item, index)
-}
+  console.log(item, index);
+};
 </script>
 
 <style lang="scss" scoped>

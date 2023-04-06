@@ -20,8 +20,8 @@
 </template>
 
 <script lang="ts" setup>
-import Header from './components/header.vue'
-import Footer from './components/footer.vue'
+import Footer from './components/footer.vue';
+import Header from './components/header.vue';
 </script>
 
 <style lang="scss" scoped>
@@ -36,7 +36,9 @@ import Footer from './components/footer.vue'
     background: #fff;
   }
 
-  .el-footer {
+  .el-main {
+    width: 1600px;
+    margin: 0 auto;
   }
 }
 </style>
