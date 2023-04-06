@@ -8,7 +8,7 @@
 -->
 <template>
   <div class="home">
-    <el-row :gutter="20">
+    <el-row :gutter="20" justify="center">
       <el-col :span="4">
         <PersonalProfile />
         <LabelRouter />
@@ -20,6 +20,7 @@
       <el-col :span="6">
         <ArticleHotList />
         <SameEveryDay />
+        <WebsPerformance />
       </el-col>
     </el-row>
   </div>
@@ -31,6 +32,7 @@ import ListPage from './home/ListPage.vue'
 import PersonalProfile from './home/PersonalProfile.vue'
 import SameEveryDay from './home/SameEveryDay.vue'
 import StyleManagement from './home/StyleManagement.vue'
+import WebsPerformance from './home/WebsPerformance.vue'
 </script>
 
 <style lang="scss" scoped>

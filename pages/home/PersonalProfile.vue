@@ -2,7 +2,7 @@
   <el-row>
     <el-col :span="24">
       <div class="part">
-        <nuxt-link to="/">
+        <nuxt-link to="/user">
           <div class="user-info">
             <div class="avater-wrapper">
               <div class="avater" />

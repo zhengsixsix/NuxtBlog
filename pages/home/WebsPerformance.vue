@@ -1,7 +1,144 @@
-<template><div>123</div></template>
+<template>
+  <div class="box01">
+    <div class="part info">
+      <div class="main_title">网站信息</div>
+      <div class="webPerformance_diary">
+        <ul>
+          <li class="webPerformance_diary_item">
+            <div>
+              <span>Dom 渲染耗时</span>
+              <span>{{ performanceInfo.domEnd }} ms</span>
+            </div>
+          </li>
+          <li class="webPerformance_diary_item">
+            <div>
+              <span>白屏时间</span>
+              <span>{{ performanceInfo.navigationStart }} ms</span>
+            </div>
+          </li>
+          <li class="webPerformance_diary_item">
+            <div>
+              <span>内存使用占比</span>
+              <span>{{ performanceInfo.memory }} %</span>
+            </div>
+          </li>
+          <li class="webPerformance_diary_item">
+            <div>
+              <span>Dom Ready时间</span>
+              <span>{{ performanceInfo.domready }} ms</span>
+            </div>
+          </li>
+          <li class="webPerformance_diary_item">
+            <div>
+              <span>onload 时间</span>
+              <span>{{ performanceInfo.onload }} ms</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
 
-<script>
-export default {}
+<script setup lang="ts">
+import { reactive } from 'vue'
+interface PerformanceInfo {
+  navigationStart: number
+  domEnd: number
+  domready: number
+  onload: number
+  memory: number
+}
+
+const defaultPerformanceInfo: PerformanceInfo = {
+  navigationStart: 0,
+  domEnd: 0,
+  domready: 0,
+  onload: 0,
+  memory: 0,
+}
+
+const performanceInfo = reactive(defaultPerformanceInfo)
+// 获取网站性能信息 要编程宏任务拿到最后的数据
+const getPerformanceInfront = (): void => {
+  if (process.client) {
+    setTimeout(() => {
+      performanceInfo.navigationStart =
+        window.performance.timing.domLoading -
+        window.performance.timing.fetchStart
+      performanceInfo.domEnd =
+        window.performance.timing.domComplete -
+        window.performance.timing.domLoading
+      performanceInfo.domready =
+        window.performance.timing.domContentLoadedEventEnd -
+        window.performance.timing.fetchStart
+      performanceInfo.onload =
+        window.performance.timing.loadEventStart -
+        window.performance.timing.fetchStart
+      if (window.performance.hasOwnProperty('memory')) {
+        performanceInfo.memory = getrmb(
+          window.performance.memory.usedJSHeapSize
+        )
+      }
+    }, 500)
+  }
+}
+getPerformanceInfront()
+const getrmb = (size: number | undefined): number => {
+  if (size === undefined) {
+    return 0
+  }
+  return Math.floor(size / 1024 / 1024 / 100)
+}
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.box01 {
+  .part {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin-top: 10px;
+    .main_title {
+      margin-top: 5px;
+      margin-left: 5px;
+      color: #344449;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .webPerformance_diary {
+      margin-top: 10px;
+      background-color: rgba(0, 0, 0, 0.025);
+      padding: 15px;
+      ul {
+        width: 100%;
+        li {
+          background: none;
+          margin-top: 10px;
+          div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+            font-size: 14px;
+            span:nth-child(2) {
+              background-color: #fff;
+              padding: 0 6px;
+              border-radius: 3px;
+              box-shadow: 0 0 6px #ccc;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</style>
