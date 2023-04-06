@@ -93,7 +93,7 @@ const getrmb = (size: number | undefined): number => {
   if (size === undefined) {
     return 0
   }
-  return Math.floor(size / 1024 / 1024 / 100)
+  return Math.floor(size / 1024 / 1024)
 }
 </script>
 
