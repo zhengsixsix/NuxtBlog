@@ -1,9 +1,4 @@
-<style src="./app.css" />
 <template>
-  <input type="checkbox" id="day-night" /><label for="day-night"></label>
-  <div class="content">
-    <div class="moon-sun"></div>
-  </div>
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
