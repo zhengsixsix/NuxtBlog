@@ -15,7 +15,7 @@
       margin: 0;
       padding: 0;
       width: 100vw;
-      height: 100vh;
+      height: 100%;
       overflow: hidden;
       display: flex;
       align-items: flex-end;
@@ -26,6 +26,7 @@
     }
 
     .content {
+      overflow: hidden;
       --frame: #070b32;
       --bush: #181b38;
       --dot1: radial-gradient(
