@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <el-row :gutter="20" justify="center">
-      <el-col :span="4">
+      <el-col :span="5">
         <PersonalProfile />
         <LabelRouter />
         <StyleManagement />
@@ -9,7 +9,7 @@
       <el-col :span="12">
         <ListPage />
       </el-col>
-      <el-col :span="6">
+      <el-col :span="7">
         <ArticleHotList />
         <SameEveryDay />
         <WebsPerformance />

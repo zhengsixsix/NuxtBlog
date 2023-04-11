@@ -1,20 +1,20 @@
 <template>
-  <div class="common-layout">
-    <el-container>
-      <el-header height="70px">
+  <div class="box">
+    <div class="moon">
+      <input id="day-night" type="checkbox"><label for="day-night" />
+      <div class="content">
+        <div class="moon-sun" />
+      </div>
+    </div>
+    <div class="common-layout">
+      <el-header>
         <Header />
       </el-header>
-      <div class="main">
-        <input id="day-night" type="checkbox"><label for="day-night" />
-        <div class="content">
-          <div class="moon-sun" />
-        </div>
-        <slot />
-      </div>
+      <NuxtPage />
       <el-footer>
         <Footer />
       </el-footer>
-    </el-container>
+    </div>
   </div>
 </template>
 
@@ -23,23 +23,27 @@ import Footer from './components/footer.vue';
 import Header from './components/header.vue';
 </script>
 
+<style src="./moon.scss" />
 <style lang="scss" scoped>
-@import './moon.scss';
-.common-layout {
+.box {
   width: 100%;
   height: 100%;
-
-  .el-container {
-    height: 100%;
-  }
-
-  .el-header {
-    background: #fff;
-  }
-
-  .main {
-    width: 1336px;
+  .common-layout {
+    width: 1366px;
     margin: 0 auto;
+
+    // .el-container {
+    //   height: 100%;
+    // }
+
+    // .el-header {
+    //   background: #fff;
+    // }
+
+    // .el-main {
+    //   width: 1366px;
+    //   margin: 0 auto;
+    // }
   }
 }
 </style>

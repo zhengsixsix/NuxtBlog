@@ -1,31 +1,36 @@
+<!--
+ * @Author: 1314520zjX! 1833496831@qq.com
+ * @Date: 2023-04-06 17:15:39
+ * @LastEditors: 1314520zjX! 1833496831@qq.com
+ * @LastEditTime: 2023-04-06 18:31:08
+ * @FilePath: \blog\pages\home\LabelRouter.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
-  <el-row>
-    <el-col :span="24">
-      <div class="part menu">
-        <div class="main-title">
-          导航栏
-        </div>
-        <div class="nav-list">
-          <div
-            v-for="(item, index) of navList"
-            :key="index"
-            :class="
-              item.activeShow ? 'nav-list-wrapper active' : 'nav-list-wrapper'
-            "
-            @click="changeStyle(item, index)"
-          >
-            <div class="title">
-              {{ item.title }}
-            </div>
+  <div class="LabelRouter">
+    <div class="part menu">
+      <div class="main-title">
+        导航栏
+      </div>
+      <div class="nav-list">
+        <div
+          v-for="(item, index) of navList"
+          :key="index"
+          :class="
+            item.activeShow ? 'nav-list-wrapper active' : 'nav-list-wrapper'
+          "
+          @click="changeStyle(item, index)"
+        >
+          <div class="title">
+            {{ item.title }}
           </div>
         </div>
       </div>
-    </el-col>
-  </el-row>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-
 const navList = reactive([
   {
     id: 0,
@@ -83,64 +88,43 @@ const changeStyle = (item: any, index: any) => {
 </script>
 
 <style lang="scss" scoped>
-.part {
-  position: relative;
-  width: 100%;
-  height: auto;
-  border-radius: 7px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(209, 213, 219, 0.3);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-  margin-top: 10px;
-
-  .main-title {
-    margin-top: 5px;
-    margin-left: 5px;
-    color: #344449;
-    font-size: 14px;
-    font-weight: 600;
-  }
-}
-.menu {
-  .nav-list {
-    display: flex;
-    flex-direction: column;
-    .nav-list-wrapper {
+@import '@/assets/style/home.scss';
+.LabelRouter {
+  .menu {
+    .nav-list {
       display: flex;
-      cursor: pointer;
-      align-items: center;
-      .iconfont {
-        margin-left: 15px;
-        font-family: 'iconfont' !important;
-        font-size: 20px;
-        font-style: normal;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        transition: all 0.2s;
+      flex-direction: column;
+      .nav-list-wrapper {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        .iconfont {
+          margin-left: 15px;
+          font-family: 'iconfont' !important;
+          font-size: 20px;
+          font-style: normal;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          transition: all 0.2s;
+        }
+        .title {
+          height: 35px;
+          line-height: 35px;
+          transition: all 0.2s;
+          width: 100%;
+          margin-left: 10px;
+        }
       }
-      .title {
-        height: 35px;
-        line-height: 35px;
-        transition: all 0.2s;
-        width: 100%;
-        margin-left: 10px;
-      }
-    }
-    .active {
-      background-color: #ccc;
-      border-radius: 20px;
-      .iconfont {
-        font-size: 24px;
-        transition: all 0.2s;
-      }
-      .title {
-        font-size: 18px;
+      .active {
+        background-color: #ccc;
+        border-radius: 20px;
+        .iconfont {
+          font-size: 24px;
+          transition: all 0.2s;
+        }
+        .title {
+          font-size: 18px;
+        }
       }
     }
   }
