@@ -22,8 +22,7 @@
 import Footer from './components/footer.vue';
 import Header from './components/header.vue';
 </script>
-
-<style src="./moon.scss" />
+<style src="./moon.scss" scoped/>
 <style lang="scss" scoped>
 .box {
   width: 100%;

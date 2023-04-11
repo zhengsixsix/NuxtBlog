@@ -44,21 +44,12 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue';
-interface PerformanceInfo {
-  navigationStart: number
-  domEnd: number
-  domready: number
-  onload: number
-  memory: number
-}
-
 interface PerformanceMemory extends Performance {
   memory?: {
     usedJSHeapSize: number
   }
 }
-
-const defaultPerformanceInfo: PerformanceInfo = {
+const defaultPerformanceInfo = {
   navigationStart: 0,
   domEnd: 0,
   domready: 0,
@@ -96,7 +87,7 @@ const getrmb = (size: number | undefined): number => {
   if (size === undefined) {
     return 0;
   }
-  return Math.floor(size / 1024 / 1024 / 100);
+  return Math.floor(size / 1024 / 1024);
 };
 </script>
 
@@ -105,7 +96,7 @@ const getrmb = (size: number | undefined): number => {
 .WebsPerformance {
   .info {
     .webPerformance_diary {
-      margin-top: 10px;
+      margin: 10px;
       background-color: rgba(255, 255, 255, 0.1);
       border-radius: 6px;
       padding: 15px;

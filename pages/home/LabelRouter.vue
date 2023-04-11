@@ -13,14 +13,9 @@
         导航栏
       </div>
       <div class="nav-list">
-        <div
-          v-for="(item, index) of navList"
-          :key="index"
-          :class="
-            item.activeShow ? 'nav-list-wrapper active' : 'nav-list-wrapper'
-          "
-          @click="changeStyle(item, index)"
-        >
+        <div v-for="(item) of navList" :key="item.id" :class="
+          item.activeShow ? 'nav-list-wrapper active' : 'nav-list-wrapper'
+        " @click="changeStyle(item)">
           <div class="title">
             {{ item.title }}
           </div>
@@ -31,13 +26,20 @@
 </template>
 
 <script setup lang="ts">
-const navList = reactive([
+interface NavList {
+  id: number,
+  route: string,
+  icon: string,
+  title: string,
+  activeShow: boolean
+}
+const navList = reactive<Array<NavList>>([
   {
     id: 0,
     route: '/',
     icon: 'iconfont icon-shouye',
     title: '首页',
-    activeShow: false
+    activeShow: true
   },
   {
     id: 1,
@@ -82,22 +84,25 @@ const navList = reactive([
     activeShow: false
   }
 ]);
-const changeStyle = (item: any, index: any) => {
-  console.log(item, index);
+const changeStyle = (item: NavList) => {
+  navList.forEach(element => { element.activeShow = element.id === item.id })
 };
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/style/home.scss';
+
 .LabelRouter {
   .menu {
     .nav-list {
       display: flex;
       flex-direction: column;
+
       .nav-list-wrapper {
         display: flex;
         cursor: pointer;
         align-items: center;
+
         .iconfont {
           margin-left: 15px;
           font-family: 'iconfont' !important;
@@ -107,6 +112,7 @@ const changeStyle = (item: any, index: any) => {
           -moz-osx-font-smoothing: grayscale;
           transition: all 0.2s;
         }
+
         .title {
           height: 35px;
           line-height: 35px;
@@ -115,13 +121,19 @@ const changeStyle = (item: any, index: any) => {
           margin-left: 10px;
         }
       }
+
       .active {
-        background-color: #ccc;
-        border-radius: 20px;
+        backdrop-filter: blur(3px) saturate(180%);
+        -webkit-backdrop-filter: blur(3px) saturate(180%);
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        margin: 5px 0;
+
         .iconfont {
           font-size: 24px;
           transition: all 0.2s;
         }
+
         .title {
           font-size: 18px;
         }
