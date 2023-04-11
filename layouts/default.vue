@@ -1,16 +1,16 @@
 <template>
   <div class="common-layout">
-    <input id="day-night" type="checkbox"><label for="day-night" />
-    <div class="content">
-      <div class="moon-sun" />
-    </div>
     <el-container>
       <el-header height="70px">
         <Header />
       </el-header>
-      <el-main>
+      <div class="main">
+        <input id="day-night" type="checkbox"><label for="day-night" />
+        <div class="content">
+          <div class="moon-sun" />
+        </div>
         <slot />
-      </el-main>
+      </div>
       <el-footer>
         <Footer />
       </el-footer>
@@ -37,8 +37,8 @@ import Header from './components/header.vue';
     background: #fff;
   }
 
-  .el-main {
-    width: 1200px;
+  .main {
+    width: 1336px;
     margin: 0 auto;
   }
 }
