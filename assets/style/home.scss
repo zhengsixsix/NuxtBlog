@@ -1,8 +1,22 @@
+@import './variables.scss';
+
+.square {
+    .part {
+        border-radius: $square-radius;
+    }
+}
+
+.round {
+    .part {
+        border-radius: $round-radius;
+    }
+
+}
+
 .part {
     position: relative;
     width: 100%;
     height: auto;
-    border-radius: 7px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
