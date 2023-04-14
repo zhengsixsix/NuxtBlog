@@ -14,16 +14,32 @@
       <el-dialog
         v-model="visible"
         :title="isLogin ? '登录掘金畅享更多权益' : '注册'"
-        width="30%"
+        width="25%"
         center
         append-to-body
       >
-        <el-form v-model="loginvalue" label-width="90px" :rules="rules">
+        <el-form v-model="loginvalue" :rules="rules" label-position="top">
           <el-form-item label="用户名：" prop="username">
-            <el-input />
+            <el-input placeholder="Please input">
+              <template #prepend>
+                <img :src="username" alt="" style="width: 20px" />
+              </template>
+            </el-input>
           </el-form-item>
           <el-form-item label="密码：" prop="password">
-            <el-input />
+            <el-input placeholder="Please input">
+              <template #prepend>
+                <img :src="password" alt="" style="width: 20px" />
+              </template>
+            </el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-row>
+              <el-col class="setLogin">
+                <el-radio :label="3">记住登录状态</el-radio>
+                <span>忘记密码</span>
+              </el-col>
+            </el-row>
           </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="submitForm"> 登录 </el-button>
@@ -35,6 +51,8 @@
 </template>
 
 <script setup lang="ts">
+import username from '@/assets/SVG/LoginSvg/dengluye-yonghuming.svg'
+import password from '@/assets/SVG/LoginSvg/mima.svg'
 const isLogin = ref(false)
 const visible = ref(false)
 const loginvalue = reactive({})

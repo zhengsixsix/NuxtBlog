@@ -4,3 +4,8 @@ declare module '*.svg' {
     const svgIcon: ImgHTMLAttributes
     export default svgIcon
 }
+declare module '@nuxt/types' {
+    interface NuxtConfig {
+      buildModules?: string[];
+    }
+  }

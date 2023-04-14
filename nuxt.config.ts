@@ -18,5 +18,8 @@ export default defineNuxtConfig({
   },
   modules: [
     '@element-plus/nuxt'
+  ],
+  plugins: [
+    '~/plugins/mavon-editor.client.ts'
   ]
 });
