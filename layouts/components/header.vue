@@ -46,6 +46,9 @@
           </el-form-item>
         </el-form>
       </el-dialog>
+      <el-dialog v-model="isVerufucation" center append-to-body width="22%">
+        <verification />
+      </el-dialog>
     </client-only>
   </div>
 </template>
@@ -55,6 +58,7 @@ import username from '@/assets/SVG/LoginSvg/dengluye-yonghuming.svg'
 import password from '@/assets/SVG/LoginSvg/mima.svg'
 const isLogin = ref(false)
 const visible = ref(false)
+const isVerufucation = ref(false)
 const loginvalue = reactive({})
 const rules = {
   username: [
@@ -76,6 +80,7 @@ const handleLoginClick = (login: boolean) => {
 }
 const submitForm = () => {
   console.log(loginvalue)
+  isVerufucation.value = true
 }
 </script>
 
