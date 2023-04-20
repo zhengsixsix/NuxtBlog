@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   nitro: {
     devProxy: {
       '/api': {
-        target: '',
+        target: 'http://82.156.176.52:8084/',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''

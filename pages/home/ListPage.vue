@@ -6,7 +6,7 @@
           <el-row :gutter="10">
             <el-col :span="19">
               <div class="article">
-                <div class="list_title">这是文章标题</div>
+                <div class="list_title"><span> 这是文章标题 </span></div>
                 <div class="list_introduction">这是文章简介</div>
                 <div class="list_label">
                   <el-check-tag checked style="margin-right: 8px">
@@ -101,6 +101,17 @@ const handleToggle = (type: keyof typeof params) => {
         font-size: 26px;
         font-weight: bold;
         color: #000;
+        span {
+          background: linear-gradient(to right, #ec695c, #61c454) no-repeat
+            right bottom;
+          background-size: 0 2px;
+          transition: background-size 1300ms;
+          &:hover {
+            cursor: pointer;
+            background-position-x: left;
+            background-size: 100% 2px;
+          }
+        }
       }
 
       .list_introduction {
