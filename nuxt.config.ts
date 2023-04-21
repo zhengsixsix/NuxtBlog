@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     '@element-plus/nuxt'
   ],
   plugins: [
-    '~/plugins/mavon-editor.client.ts'
+    '~/plugins/vue-quill-editor.client.ts',
+    '~/plugins/mavon-editor.client.ts',
   ]
 });

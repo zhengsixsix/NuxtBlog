@@ -1,17 +1,31 @@
 <template>
   <client-only>
+    <header>
+      <div class="left_box"></div>
+      <input
+        type="text"
+        placeholder="输入文章标题..."
+        maxlength="80"
+        spellcheck="false"
+        class="title_input"
+      />
+      <div class="right_box"></div>
+    </header>
     <div class="publisharticle">
       <mavon-editor
         v-model="content"
         :ishljs="true"
         :toolbars="params"
-        toolbarsBackground="#fafbfc"
-        style="height: 80vh"
+        toolbarsBackground="#f8f9fa"
+        style="height: 93vh"
       />
     </div>
   </client-only>
 </template>
 <script setup lang="ts">
+definePageMeta({
+  layout: false,
+})
 const content = ref('')
 const toolbars = {
   bold: true, // 粗体
@@ -51,6 +65,31 @@ const toolbars = {
 const params = reactive(toolbars)
 </script>
 <style lang="scss" scoped>
+header {
+  height: 4.2rem;
+  display: flex;
+  width: 100%;
+  .left_box {
+    padding-right: 14px;
+  }
+  .right_box {
+    width: 436px;
+  }
+  .title_input {
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 27px;
+    font-size: 24px;
+    flex: 1;
+    color: black;
+    &::-webkit-input-placeholder {
+      color: #86909c;
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+}
 .publisharticle {
   ::v-deep(.v-note-op) {
     border: 1px solid #e1e4e8;
@@ -59,13 +98,14 @@ const params = reactive(toolbars)
     }
   }
   ::v-deep(.v-note-edit) {
-    background-color: #fafbfc !important;
+    background-color: #f8f9fa !important;
     overflow-y: auto !important;
     border-right: 1px solid #e1e4e8;
+    border-radius: 0;
     .content-input-wrapper {
-      background-color: #fafbfc !important;
+      background-color: #f8f9fa !important;
       .auto-textarea-input {
-        background-color: #fafbfc !important;
+        background-color: #f8f9fa !important;
       }
     }
   }
