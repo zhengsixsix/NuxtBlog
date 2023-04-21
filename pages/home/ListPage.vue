@@ -6,8 +6,12 @@
           <el-row :gutter="10">
             <el-col :span="19">
               <div class="article">
-                <div class="list_title">这是文章标题</div>
-                <div class="list_introduction">这是文章简介</div>
+                <div class="list_title">
+                  这是文章标题
+                </div>
+                <div class="list_introduction">
+                  这是文章简介
+                </div>
                 <div class="list_label">
                   <el-check-tag checked style="margin-right: 8px">
                     这是文章标签
@@ -29,11 +33,11 @@
                       "
                       alt=""
                       @click="handleToggle('isArticleLiked')"
-                    />
+                    >
                     <span>1234</span>
                   </div>
                   <div class="article_comment">
-                    <img :src="articleComment" alt="" />
+                    <img :src="articleComment" alt="">
                     <span>1234</span>
                   </div>
                   <div class="article_follow">
@@ -45,11 +49,11 @@
                       "
                       alt=""
                       @click="handleToggle('isArticleFollowed')"
-                    />
+                    >
                     <span>1234</span>
                   </div>
                   <div class="article_time">
-                    <img :src="articleTime" alt="" />
+                    <img :src="articleTime" alt="">
                     <span>2022-03-04</span>
                   </div>
                 </div>
@@ -60,7 +64,7 @@
                 <img
                   src="https://q1.qlogo.cn/g?b=qq&nk=2510186180&s=100"
                   alt=""
-                />
+                >
               </div>
             </el-col>
           </el-row>
@@ -71,21 +75,21 @@
 </template>
 
 <script setup lang="ts">
-import articleThumbsFalse from '@/assets/SVG/HomeTableSvg/dianzan.svg'
-import articleThumbsTrue from '@/assets/SVG/HomeTableSvg/dianzan_1.svg'
-import articleComment from '@/assets/SVG/HomeTableSvg/pinglun.svg'
-import articleFollowFalse from '@/assets/SVG/HomeTableSvg/guanzhu-weiguanzhu.svg'
-import articleFollowTrue from '@/assets/SVG/HomeTableSvg/guanzhu-yiguanzhu.svg'
-import articleTime from '@/assets/SVG/HomeTableSvg/anfabushijian.svg'
-import { reactive } from 'vue'
+import { reactive } from 'vue';
+import articleTime from '@/assets/SVG/HomeTableSvg/anfabushijian.svg';
+import articleThumbsFalse from '@/assets/SVG/HomeTableSvg/dianzan.svg';
+import articleThumbsTrue from '@/assets/SVG/HomeTableSvg/dianzan_1.svg';
+import articleFollowFalse from '@/assets/SVG/HomeTableSvg/guanzhu-weiguanzhu.svg';
+import articleFollowTrue from '@/assets/SVG/HomeTableSvg/guanzhu-yiguanzhu.svg';
+import articleComment from '@/assets/SVG/HomeTableSvg/pinglun.svg';
 
 const params = reactive({
   isArticleLiked: false,
-  isArticleFollowed: false,
-})
+  isArticleFollowed: false
+});
 const handleToggle = (type: keyof typeof params) => {
-  params[type] = !params[type]
-}
+  params[type] = !params[type];
+};
 </script>
 
 <style lang="scss" scoped>

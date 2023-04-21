@@ -1,123 +1,123 @@
 <template>
   <div class="verify-slide-con">
     <div class="img-con">
-      <img :src="ImgSrc" alt="" ref="ImgRef" />
-      <div class="slide-block" ref="slideBlockRef"></div>
-      <div class="slide-block-mask" ref="slideBlockMaskRef"></div>
+      <img ref="ImgRef" :src="ImgSrc" alt="">
+      <div ref="slideBlockRef" class="slide-block" />
+      <div ref="slideBlockMaskRef" class="slide-block-mask" />
     </div>
     <div class="slide-con">
-      <div class="slide-btn" ref="slideBtnRef">
+      <div ref="slideBtnRef" class="slide-btn">
         <!-- 滑动按钮 -->
-        <i class="iconfont icon-arrow-right"></i>
+        <i class="iconfont icon-arrow-right" />
         <!-- 图标 -->
       </div>
     </div>
     <div class="operate-con" @click="switchImg()">
       <!-- 操作容器块 -->
-      <i id="refresh" class="iconfont icon-shuaxin1"></i>
+      <i id="refresh" class="iconfont icon-shuaxin1" />
       <!-- 刷新按钮 -->
     </div>
   </div>
 </template>
 <script setup lang="ts">
 const loadCss = () => {
-  const link = document.createElement('link')
-  link.rel = 'stylesheet'
-  link.href = 'https://at.alicdn.com/t/font_1582902_u0zm91pv15i.css'
-  document.head.appendChild(link)
-}
-loadCss()
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://at.alicdn.com/t/font_1582902_u0zm91pv15i.css';
+  document.head.appendChild(link);
+};
+loadCss();
 
 const imgList = reactive<Array<string>>([
   'http://www.sdust.edu.cn/__local/9/7A/B1/F29B84DEF72DD329997E8172ABA_664BA3EF_32466.jpg',
   'http://www.sdust.edu.cn/__local/B/F3/E4/693AB931C9FFB84646970D53BFE_C506394A_4282CA.jpg',
   'http://www.sdust.edu.cn/__local/F/7A/AA/E1459849AA8AB0C89854A41BD41_BF3BD857_BC0D8.jpg',
-  'http://www.sdust.edu.cn/__local/1/95/CB/EDC1450B8FD1B8A25FAAC726AA4_A36D4253_16C91.jpg',
-])
-const ImgRef = ref<HTMLImageElement>()
-const slideBlockRef = ref<HTMLDivElement>()
-const slideBtnRef = ref<HTMLDivElement>()
-const slideBlockMaskRef = ref<HTMLDivElement>()
-let ImgDom: any = null
-let slideBlockDom: any = null
-let slideBtnDom: any = null
-let slideBlockMaskDom: any = null
-let ImgSrc = ref()
+  'http://www.sdust.edu.cn/__local/1/95/CB/EDC1450B8FD1B8A25FAAC726AA4_A36D4253_16C91.jpg'
+]);
+const ImgRef = ref<HTMLImageElement>();
+const slideBlockRef = ref<HTMLDivElement>();
+const slideBtnRef = ref<HTMLDivElement>();
+const slideBlockMaskRef = ref<HTMLDivElement>();
+let ImgDom: any = null;
+let slideBlockDom: any = null;
+let slideBtnDom: any = null;
+let slideBlockMaskDom: any = null;
+const ImgSrc = ref();
 // 随机树公共函数
 const randomInt = (min = 0, max = 1) => {
-  return min + ~~(Math.random() * (max - min))
-}
+  return min + ~~(Math.random() * (max - min));
+};
 const switchImg = () => {
-  slideBlockDom.style.left = '0px'
-  slideBtnDom.style.left = '0px'
-  let newSrc = imgList[Math.floor(Math.random() * 4)]
-  ImgSrc.value = newSrc
+  slideBlockDom.style.left = '0px';
+  slideBtnDom.style.left = '0px';
+  const newSrc = imgList[Math.floor(Math.random() * 4)];
+  ImgSrc.value = newSrc;
   if (slideBlockDom) {
-    slideBlockDom.style['background-image'] = `url(${newSrc})`
+    slideBlockDom.style['background-image'] = `url(${newSrc})`;
   }
-  initSlider()
-}
+  initSlider();
+};
 onMounted(() => {
-  ImgDom = ImgRef.value
-  slideBlockDom = slideBlockRef.value
-  slideBtnDom = slideBtnRef.value
-  slideBlockMaskDom = slideBlockMaskRef.value
-  switchImg()
-})
+  ImgDom = ImgRef.value;
+  slideBlockDom = slideBlockRef.value;
+  slideBtnDom = slideBtnRef.value;
+  slideBlockMaskDom = slideBlockMaskRef.value;
+  switchImg();
+});
 
 const initSlider = () => {
   if (ImgDom && slideBlockDom && slideBtnDom && slideBlockMaskDom) {
-    let maxTop =
+    const maxTop =
       ImgDom.offsetHeight -
       ~~window
         .getComputedStyle(slideBlockDom)
         .getPropertyValue('height')
-        .replace('px', '')
-    let maxRight =
+        .replace('px', '');
+    const maxRight =
       ImgDom.offsetWidth -
       ~~window
         .getComputedStyle(slideBlockDom)
         .getPropertyValue('width')
-        .replace('px', '')
-    let randPosY = randomInt(0, Math.abs(maxTop))
-    let randPosX = randomInt(60, Math.abs(maxRight))
-    slideBlockMaskDom.style.display = 'block'
-    slideBlockMaskDom.style.top = `${randPosY}px`
-    slideBlockMaskDom.style.left = `${randPosX}px`
-    slideBlockDom.style.display = 'block'
-    slideBlockDom.style.top = `${randPosY}px`
+        .replace('px', '');
+    const randPosY = randomInt(0, Math.abs(maxTop));
+    const randPosX = randomInt(60, Math.abs(maxRight));
+    slideBlockMaskDom.style.display = 'block';
+    slideBlockMaskDom.style.top = `${randPosY}px`;
+    slideBlockMaskDom.style.left = `${randPosX}px`;
+    slideBlockDom.style.display = 'block';
+    slideBlockDom.style.top = `${randPosY}px`;
     slideBlockDom.style.setProperty(
       'background-position',
       `-${randPosX}px -${randPosY}px`
-    )
+    );
     slideBtnDom.onmousedown = (e: any) => {
-      let edgeX = e.clientX
+      const edgeX = e.clientX;
       document.onmousemove = (event) => {
-        let relativeX = event.clientX - edgeX
+        const relativeX = event.clientX - edgeX;
         if (
           relativeX < 0 ||
           relativeX > ImgDom.offsetWidth - slideBtnDom.offsetWidth
         ) {
-          return void 0
+          return void 0;
         }
-        slideBlockDom.style.left = relativeX + 'px' // 移动拼图
-        slideBtnDom.style.left = relativeX + 'px' // 移动滑块按钮
-      }
+        slideBlockDom.style.left = relativeX + 'px'; // 移动拼图
+        slideBtnDom.style.left = relativeX + 'px'; // 移动滑块按钮
+      };
       document.onmouseup = function () {
-        this.onmousemove = null // 撤销事件
-        this.onmouseup = null // 撤销事件
+        this.onmousemove = null; // 撤销事件
+        this.onmouseup = null; // 撤销事件
         if (
           Math.abs(slideBlockDom.offsetLeft - slideBlockMaskDom.offsetLeft) <= 2
         ) {
-          console.log('成功')
+          console.log('成功');
         } else {
-          slideBlockDom.style.left = '0px'
-          slideBtnDom.style.left = '0px'
+          slideBlockDom.style.left = '0px';
+          slideBtnDom.style.left = '0px';
         }
-      }
-    }
+      };
+    };
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .verify-slide-con {

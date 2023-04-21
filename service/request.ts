@@ -12,10 +12,10 @@ interface ResultData<T = any> extends Result {
     data?: T;
 }
 
-const URL = '/api'; // 配置前缀
+const URL = 'http://82.156.176.52:8084'; // 配置前缀
 enum RequestEnums {
   TIMEOUT = 20000,
-  OVERDUE = 600, // 登录失效
+  OVERDUE = 401, // 登录失效
   FAIL = 999, // 请求失败
   SUCCESS = 200, // 请求成功
 }
@@ -43,7 +43,7 @@ class RequestHttp {
     this.service.interceptors.request.use(
       (config) => {
         const { headers } = config;
-        const token = localStorage.getItem('token') ?? '';
+        const token = useCookie('token');
         if (headers && token) {
           headers.token = token;
         }
@@ -61,10 +61,12 @@ class RequestHttp {
          */
     this.service.interceptors.response.use(
       (response: AxiosResponse) => {
+        console.log(response);
         const { data } = response; // 解构
         if (data.code === RequestEnums.OVERDUE) {
           // 登录信息失效，应跳转到登录页面，并清空本地的token
-          localStorage.setItem('token', '');
+          const token = useCookie('token');
+          token.value = '';
           return Promise.reject(data);
         }
         // 全局错误信息拦截（防止下载文件得时候返回数据流，没有code，直接报错）
@@ -75,16 +77,10 @@ class RequestHttp {
         return data;
       },
       (error: AxiosError) => {
+        console.log(error);
         const { response } = error;
         if (response) {
           this.handleCode(response.status);
-        }
-        if (!window.navigator.onLine) {
-          ElMessage.error('网络连接失败');
-          // 可以跳转到错误页面，也可以不做操作
-          // return router.replace({
-          // path: '/404'
-          // });
         }
       }
     );

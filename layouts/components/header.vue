@@ -4,11 +4,15 @@
       <img
         src="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/e08da34488b114bd4c665ba2fa520a31.svg"
         alt=""
-      />
+      >
     </h1>
     <el-row justify="space-between">
-      <el-button @click="handleLoginClick(true)"> 登录 </el-button>
-      <el-button @click="handleLoginClick(false)"> 注册 </el-button>
+      <el-button @click="handleLoginClick(true)">
+        登录
+      </el-button>
+      <el-button @click="handleLoginClick(false)">
+        注册
+      </el-button>
     </el-row>
     <client-only>
       <el-dialog
@@ -18,31 +22,35 @@
         center
         append-to-body
       >
-        <el-form v-model="loginvalue" :rules="rules" label-position="top">
-          <el-form-item label="用户名：" prop="username">
-            <el-input placeholder="Please input">
+        <el-form :rules="rules" label-position="top">
+          <el-form-item label="邮箱：" prop="email">
+            <el-input v-model="loginvalue.email" placeholder="请输入邮箱">
               <template #prepend>
-                <img :src="username" alt="" style="width: 20px" />
+                <img :src="usernameSvg" alt="" style="width: 20px">
               </template>
             </el-input>
           </el-form-item>
           <el-form-item label="密码：" prop="password">
-            <el-input placeholder="Please input">
+            <el-input v-model="loginvalue.password" placeholder="请输入密码">
               <template #prepend>
-                <img :src="password" alt="" style="width: 20px" />
+                <img :src="passwordSvg" alt="" style="width: 20px">
               </template>
             </el-input>
+          </el-form-item>
+          <el-form-item v-if="!isLogin" label="验证码" prop="code">
+            <el-input v-model="loginvalue.code" placeholder="请输入验证码" />
           </el-form-item>
           <el-form-item>
             <el-row>
               <el-col class="setLogin">
-                <el-radio :label="3">记住登录状态</el-radio>
                 <span>忘记密码</span>
               </el-col>
             </el-row>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="submitForm"> 登录 </el-button>
+            <el-button type="primary" @click="submitForm">
+              {{ isLogin ? '登录' : '注册' }}
+            </el-button>
           </el-form-item>
         </el-form>
       </el-dialog>
@@ -54,34 +62,52 @@
 </template>
 
 <script setup lang="ts">
-import username from '@/assets/SVG/LoginSvg/dengluye-yonghuming.svg'
-import password from '@/assets/SVG/LoginSvg/mima.svg'
-const isLogin = ref(false)
-const visible = ref(false)
-const isVerufucation = ref(false)
-const loginvalue = reactive({})
+import usernameSvg from '@/assets/SVG/LoginSvg/dengluye-yonghuming.svg';
+import passwordSvg from '@/assets/SVG/LoginSvg/mima.svg';
+import { register, login } from '@/service/login';
+const isLogin = ref(false);
+const visible = ref(false);
+const isVerufucation = ref(false);
+const loginvalue = reactive({
+  email: '',
+  password: '',
+  code: undefined
+});
 const rules = {
-  username: [
+  email: [
     {
       required: true,
-      message: '请输入用户名',
-    },
+      message: '请输入用户名'
+    }
   ],
   password: [
     {
       required: true,
-      message: '请输入密码',
-    },
+      message: '请输入密码'
+    }
   ],
-}
+  code: [
+    {
+      required: true,
+      message: '验证码不能为空'
+    }
+  ]
+};
 const handleLoginClick = (login: boolean) => {
-  isLogin.value = login
-  visible.value = true
-}
-const submitForm = () => {
-  console.log(loginvalue)
-  isVerufucation.value = true
-}
+  isLogin.value = login;
+  visible.value = true;
+};
+const submitForm = async () => {
+  isVerufucation.value = true;
+  if (isLogin) {
+    await login(loginvalue);
+  } else {
+    await register(loginvalue);
+  }
+};
+const token = useCookie('token');
+console.log(token);
+// token.value = 789;
 </script>
 
 <style lang="scss" scoped>

@@ -5,9 +5,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "preinstall": "npx only-allow pnpm"
+    "preview": "nuxt preview"
   },
   "devDependencies": {
     "@element-plus/icons-vue": "^2.1.0",
