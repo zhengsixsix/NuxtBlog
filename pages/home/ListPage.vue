@@ -105,6 +105,17 @@ const handleToggle = (type: keyof typeof params) => {
         font-size: 26px;
         font-weight: bold;
         color: #000;
+        span {
+          background: linear-gradient(to right, #ec695c, #61c454) no-repeat
+            right bottom;
+          background-size: 0 2px;
+          transition: background-size 1300ms;
+          &:hover {
+            cursor: pointer;
+            background-position-x: left;
+            background-size: 100% 2px;
+          }
+        }
       }
 
       .list_introduction {
