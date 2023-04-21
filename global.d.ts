@@ -1,5 +1,5 @@
 declare const __dirname: string;
-declare module 'vue-quill-editor'
+declare module 'vue-quill'
 declare module '*.svg' {
   import { Component } from 'vue'
   const svgIcon: ImgHTMLAttributes
