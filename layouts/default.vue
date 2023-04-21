@@ -1,12 +1,12 @@
 <template>
   <div id="default" class="square">
-    <div class="moon" v-if="background">
-      <input id="day-night" type="checkbox" /><label for="day-night" />
+    <div v-if="background" class="moon">
+      <input id="day-night" type="checkbox"><label for="day-night" />
       <div class="content">
         <div class="moon-sun" />
       </div>
     </div>
-    <div class="changeBackground" v-if="!background" />
+    <div v-if="!background" class="changeBackground" />
     <div class="common-layout">
       <el-header>
         <Header />
@@ -20,9 +20,9 @@
 </template>
 
 <script lang="ts" setup>
-import Footer from './components/footer.vue'
-import Header from './components/header.vue'
-const background = useBackground()
+import Footer from './components/footer.vue';
+import Header from './components/header.vue';
+const background = useBackground();
 </script>
 <style src="./moon.scss" scoped />
 <style lang="scss" scoped>

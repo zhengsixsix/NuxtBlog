@@ -13,9 +13,14 @@
         导航栏
       </div>
       <div class="nav-list">
-        <div v-for="(item) of navList" :key="item.id" :class="
-          item.activeShow ? 'nav-list-wrapper active' : 'nav-list-wrapper'
-        " @click="changeStyle(item)">
+        <div
+          v-for="(item) of navList"
+          :key="item.id"
+          :class="
+            item.activeShow ? 'nav-list-wrapper active' : 'nav-list-wrapper'
+          "
+          @click="changeStyle(item)"
+        >
           <div class="title">
             {{ item.title }}
           </div>
@@ -85,7 +90,7 @@ const navList = reactive<Array<NavList>>([
   }
 ]);
 const changeStyle = (item: NavList) => {
-  navList.forEach(element => { element.activeShow = element.id === item.id })
+  navList.forEach((element) => { element.activeShow = element.id === item.id; });
 };
 </script>
 
