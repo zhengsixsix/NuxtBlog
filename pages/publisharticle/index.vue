@@ -9,7 +9,50 @@
         spellcheck="false"
         class="title_input"
       />
-      <div class="right_box"></div>
+      <div class="right_box">
+        <div class="status_text">文章将自动保存至草稿箱</div>
+        <el-button class="xitu_btn"> 草稿箱 </el-button>
+        <div class="publish_popup">
+          <el-button class="xitu-btn" type="primary"> 发布 </el-button>
+        </div>
+        <el-tooltip
+          content="切换为 富文本 编辑器"
+          placement="bottom"
+          effect="light"
+        >
+          <div class="editor_switcher">
+            <div class="toggle_btn">
+              <nuxt-link to="/richtext">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.7998 9.6001L19.1998 9.6001L15.1998 5.6001"
+                    stroke="#86909C"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M19.1997 14.3999L4.79971 14.3999L8.79971 18.3999"
+                    stroke="#86909C"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </nuxt-link>
+            </div>
+          </div>
+        </el-tooltip>
+        <div class="navigator">
+          <div class="toggle_btn"></div>
+        </div>
+      </div>
     </header>
     <div class="publisharticle">
       <mavon-editor
@@ -73,7 +116,33 @@ header {
     padding-right: 14px;
   }
   .right_box {
-    width: 436px;
+    width: 550px;
+    display: flex;
+    align-items: center;
+    .status_text {
+      margin: 0 8px;
+      color: #8d96a2;
+    }
+    .xitu_btn {
+      margin: 0 8px;
+    }
+    .publish_popup {
+      margin: 0 8px;
+    }
+    .navigator {
+      padding: 0 1.2rem;
+      .toggle_btn {
+        background-image: url(https://p3-passport.byteimg.com/img/user-avatar/ed7ccd7b7aa35700f9ff3b20b44edc15~64x64.awebp);
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background-color: #eee;
+        background-position: 50%;
+        background-size: cover;
+        cursor: pointer;
+        background-repeat: no-repeat;
+      }
+    }
   }
   .title_input {
     height: 100%;
