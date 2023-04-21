@@ -38,9 +38,9 @@
   </el-container>
 </template>
 
-<script setup>
+<script setup lang="ts">
 definePageMeta({
-  layout: 'detail'
+  layout: false
 });
 
 const imgUrl = 'https://release-1315154320.cos.ap-guangzhou.myqcloud.com/img/5e07b34a878c2ea195fe113b7ebf94bc.png';
