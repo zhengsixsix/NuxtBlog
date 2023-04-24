@@ -5,7 +5,7 @@
         <el-header class="header">
           Left
         </el-header>
-        <div v-for="(item, idx) in asideList" :key="idx">
+        <div v-for="(item, index) in asideList" :key="index">
           {{ item }}
         </div>
       </el-card>
@@ -30,7 +30,7 @@
         <el-header class="header">
           Right
         </el-header>
-        <div v-for="(item, idx) in asideList" :key="idx">
+        <div v-for="(item, index) in asideList" :key="index">
           {{ item }}
         </div>
       </el-card>
@@ -38,49 +38,43 @@
   </el-container>
 </template>
 
-<script setup>
+<script setup lang="ts">
 definePageMeta({
-  layout: 'detail'
+  layout: false
 });
 
 const imgUrl = 'https://release-1315154320.cos.ap-guangzhou.myqcloud.com/img/5e07b34a878c2ea195fe113b7ebf94bc.png';
-const asideList = ref([
-  'List item 1',
-  'List item 2',
-  'List item 3',
-  'List item 4'
-]);
-
+const asideList = ref(['List item 1', 'List item 2', 'List item 3', 'List item 4']);
 </script>
 
 <style lang="scss" scoped>
-  .detail {
-    background: #ecf5ff;
+.detail {
+  background: #ecf5ff;
+  height: 100%;
+  padding: 10px 80px;
+
+  .aside {
+    height: 400px;
+    width: 300px;
+  }
+
+  .main {
     height: 100%;
-    padding: 10px 80px;
+    padding: 0 20px;
 
-    .aside {
-      height: 400px;
-      width: 300px;
-    }
-
-    .main {
-      height: 100%;
-      padding: 0 20px;
-
-      .title {
-        padding: 0;
-        font-size: 40px;
-        font-weight: 700;
-      }
-    }
-
-    .header {
+    .title {
       padding: 0;
-    }
-
-    .card {
-      height: 100%;
+      font-size: 40px;
+      font-weight: 700;
     }
   }
+
+  .header {
+    padding: 0;
+  }
+
+  .card {
+    height: 100%;
+  }
+}
 </style>
