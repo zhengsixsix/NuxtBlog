@@ -25,7 +25,8 @@
     "element-plus": "^2.3.2",
     "markdown-it": "^13.0.1",
     "mavon-editor": "^3.0.1",
-    "vue-quill": "^1.5.1"
+    "vue-quill": "^1.5.1",
+    "vue3-slide-verify": "^1.1.4"
   },
   "engines": {
     "node": ">=16.13.0 <17.0.0",
